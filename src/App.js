@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import "./App.css";
 class App extends Component {
   constructor() {
     super();
@@ -11,15 +11,31 @@ class App extends Component {
   componentDidMount() {
     fetch("https://api.hatchways.io/assessment/students")
       .then((response) => response.json())
-      .then((users) => this.setState({ students: users }));
-    // console.log("Students>>>>>", students);
+      .then((response) => this.setState({ students: response.students }));
   }
 
   render() {
     const { students } = this.state;
-    console.log(students);
+    console.log(this.state.students);
 
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        {Object.keys(students).map((item) => (
+          <div key={`${students[item].id}`}>
+            <img className="profile_pic" src={`${students[item].pic}`} alt="" />
+            <h1>
+              {" "}
+              {`${students[item].firstName}`}{" "}
+              <span>{`${students[item].lastName}`} </span>
+            </h1>
+            <p>Email: {`${students[item].email}`}</p>
+            <p>Company: {`${students[item].company}`}</p>
+            <p>Skill: {`${students[item].skill}`}</p>
+            <p>Average: {`${students[item].firstName}`}</p>
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 
