@@ -21,9 +21,9 @@ class App extends Component {
     console.log(this.state.students);
 
     return (
-      <div className="App">
+      <div className="main-container">
         {Object.keys(students).map((item) => (
-          <div key={`${students[item].id}`} className="row">
+          <div key={`${students[item].id}`}>
             <img className="profile_pic" src={`${students[item].pic}`} alt="" />
             <h1>
               {" "}
@@ -34,6 +34,7 @@ class App extends Component {
             <p>Company: {`${students[item].company}`}</p>
             <p>Skill: {`${students[item].skill}`}</p>
             <p>Average: {`${students[item].firstName}`}</p>
+            <hr />
           </div>
         ))}
       </div>
