@@ -1,4 +1,6 @@
 import { Component } from "react";
+import { Container, Col, Row } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 class App extends Component {
   constructor() {
@@ -21,7 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         {Object.keys(students).map((item) => (
-          <div key={`${students[item].id}`}>
+          <div key={`${students[item].id}`} className="row">
             <img className="profile_pic" src={`${students[item].pic}`} alt="" />
             <h1>
               {" "}

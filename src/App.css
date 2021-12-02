@@ -1,4 +1,14 @@
+.App {
+  background-color: rgb(220, 220, 220);
+}
 .profile_pic {
   width: 100px;
   height: auto;
+}
+.row {
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+  width: 50em;
+  /* overflow: scroll; */
 }
